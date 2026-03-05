@@ -19,10 +19,6 @@ func App() core.Widget {
 
 	tabController := navigation.NewTabController(0)
 
-	// HACK to get it partly working!
-	home := HomePage{}
-	home.InitState()
-
 	// https://driftframework.dev/docs/guides/theming#providing-theme
 	return theme.Theme{
 		Data: theme.DefaultDarkTheme(),
@@ -35,7 +31,7 @@ func App() core.Widget {
 						Icon:  HomeIcon(),
 					},
 					func(ctx core.BuildContext) core.Widget {
-						return home.Build(ctx)
+						return HomePage{}
 					},
 				),
 				navigation.NewTab(
@@ -44,8 +40,7 @@ func App() core.Widget {
 						Icon:  GearIcon(),
 					},
 					func(ctx core.BuildContext) core.Widget {
-						page := SettingsPage{}
-						return page.Build(ctx)
+						return SettingsPage{}
 					},
 				),
 			},

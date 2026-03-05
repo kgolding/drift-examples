@@ -12,13 +12,21 @@ import (
 )
 
 type SettingsPage struct {
+	core.StatefulBase
+}
+
+func (SettingsPage) CreateState() core.State {
+	return &SettingsPageState{}
+}
+
+type SettingsPageState struct {
 	core.StateBase
 	settings   navigation.RouteSettings
 	filterText string
 	items      []string
 }
 
-func (s *SettingsPage) InitState() {
+func (s *SettingsPageState) InitState() {
 	slog.Info("SettingsPage.InitState()")
 	// Populate items with dummy data
 	for i := range 100 {
@@ -26,12 +34,12 @@ func (s *SettingsPage) InitState() {
 	}
 }
 
-func (s *SettingsPage) Dispose() {
+func (s *SettingsPageState) Dispose() {
 	slog.Info("SettingsPage.Dispose")
 }
 
-func (p *SettingsPage) Build(ctx core.BuildContext) core.Widget {
-	slog.Info("SettingsPage.Build()", "settings", p.settings)
+func (s *SettingsPageState) Build(ctx core.BuildContext) core.Widget {
+	slog.Info("SettingsPage.Build()", "settings", s.settings)
 	textTheme := theme.TextThemeOf(ctx)
 
 	header := widgets.Row{

@@ -12,12 +12,20 @@ import (
 )
 
 type HomePage struct {
+	core.StatefulBase
+}
+
+func (HomePage) CreateState() core.State {
+	return &HomePageState{}
+}
+
+type HomePageState struct {
 	core.StateBase
 	settings navigation.RouteSettings
 	items    []string
 }
 
-func (s *HomePage) InitState() {
+func (s *HomePageState) InitState() {
 	slog.Info("HomePage.InitState()")
 	// Populate items with dummy data
 	for i := range 30 {
@@ -25,12 +33,8 @@ func (s *HomePage) InitState() {
 	}
 }
 
-func (s *HomePage) Dispose() {
-	slog.Info("HomePage.Dispose")
-}
-
-func (p *HomePage) Build(ctx core.BuildContext) core.Widget {
-	slog.Info("HomePage.Build()", "settings", p.settings)
+func (s *HomePageState) Build(ctx core.BuildContext) core.Widget {
+	slog.Info("HomePage.Build()", "settings", s.settings)
 
 	textTheme := theme.TextThemeOf(ctx)
 
@@ -38,14 +42,14 @@ func (p *HomePage) Build(ctx core.BuildContext) core.Widget {
 
 	content := widgets.Expanded{
 		Child: widgets.ListViewBuilder{
-			ItemCount: len(p.items),
+			ItemCount: len(s.items),
 			ItemBuilder: func(ctx core.BuildContext, index int) core.Widget {
 				item := widgets.PaddingOnly(
 					0, 8, 0, 8,
 					widgets.Row{
 						MainAxisAlignment: widgets.MainAxisAlignmentSpaceBetween,
 						Children: []core.Widget{
-							theme.TextOf(ctx, p.items[index], textTheme.BodyLarge),
+							theme.TextOf(ctx, s.items[index], textTheme.BodyLarge),
 							theme.IconOf(ctx, ">"),
 						},
 					},
