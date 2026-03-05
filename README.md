@@ -6,5 +6,6 @@ These are **not presented as best practice** or anywhere near the best way to us
 
 ## Examples 
 
+- [Toast popup using overlays](./toast)
 - [List with text filter](./list-filtered)
 - [Navigation using tabs](./nav-tabs)

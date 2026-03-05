@@ -1,4 +1,4 @@
-module list-filtered
+module toast
 
 go 1.24.0
 
