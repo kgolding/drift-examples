@@ -1,0 +1,8 @@
+github.com/go-drift/drift v0.22.0 h1:zsi1ZrmiWicS/yk4zZig+aZL3Hwj82uRijznT0gWrBc=
+github.com/go-drift/drift v0.22.0/go.mod h1:ngN/i9bJibbwH9BxfyzeMuNjoE0lolbhYZLR7kTOmKE=
+github.com/go-drift/drift v0.22.1 h1:nIKywzHWROzvHEVmHcIyu5YIQ7S45YpQgazNaTBO5r4=
+github.com/go-drift/drift v0.22.1/go.mod h1:ngN/i9bJibbwH9BxfyzeMuNjoE0lolbhYZLR7kTOmKE=
+github.com/go-drift/drift v0.24.0 h1:dnbnMeuR03Z68c5ytl/ynO59ep7AcDZhSeYZFodM05w=
+github.com/go-drift/drift v0.24.0/go.mod h1:ngN/i9bJibbwH9BxfyzeMuNjoE0lolbhYZLR7kTOmKE=
+golang.org/x/image v0.36.0 h1:Iknbfm1afbgtwPTmHnS2gTM/6PPZfH+z2EFuOkSbqwc=
+golang.org/x/image v0.36.0/go.mod h1:YsWD2TyyGKiIX1kZlu9QfKIsQ4nAAK9bdgdrIsE7xy4=
