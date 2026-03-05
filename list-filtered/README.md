@@ -11,4 +11,4 @@
 - Enter text and click the action button on the popup keyboard to filter the list
 
 ## Screenshot
-![List with text filter (Abdroid)](listfiltered.jpg)
+<img src="listfiltered.jpg" style="width: 300px">
