@@ -19,6 +19,7 @@ func App() core.Widget {
 
 	tabController := navigation.NewTabController(0)
 
+	// HACK to get it partly working!
 	home := HomePage{}
 	home.InitState()
 
