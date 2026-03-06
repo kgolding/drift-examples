@@ -20,7 +20,8 @@ func main() {
 func App() core.Widget {
 	// https://driftframework.dev/docs/guides/theming#providing-theme
 	return theme.Theme{
-		Data: theme.DefaultDarkTheme(), // or DefaultLightTheme()
+		// MyTheme() provides with our custiom theme
+		Data: MyTheme(),
 		// We add an overlay to use later with Toast
 		Child: overlay.Overlay{
 			Child: app{},
@@ -51,6 +52,7 @@ func (s *appState) Build(ctx core.BuildContext) core.Widget {
 		Color: colors.Background,
 		Child: widgets.Centered(
 			theme.ButtonOf(ctx, "Click me", func() {
+				slog.Info("Click!")
 				Toast(ctx, "Thank you for clicking")
 			}),
 		),
@@ -81,7 +83,6 @@ func Toast(ctx core.BuildContext, message string) {
 						Content: message,
 						Style: graphics.TextStyle{
 							Color:      colors.OnInverseSurface,
-							FontSize:   14,
 							FontWeight: graphics.FontWeightBold,
 						},
 					},
